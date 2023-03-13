@@ -5,7 +5,7 @@ O experimento foi inspirado na biblioteca [`string.h`](https://cplusplus.com/ref
 
 # Definições
 Uma string é um vetor de caracteres seguindo conforme a tabela ASCII terminados 
-por dois `NULL` (`'\0'` ou `0x00`).
+por um `NULL` (`'\0'` ou `0x00`).
 
 # Exercicios
 
@@ -24,5 +24,16 @@ valor deles na tabela ASCII. Caso a `STRCMP_A` seja maior que `STRCMP_B` retorna
 Ref: [strcmp](https://cplusplus.com/reference/cstring/strcmp/)
 
 # Entrega
-Submeta um arquivo `string.lsm` ligado parcialmente com as funções acima, que será usado na correção.
-Além disso submeta um arquivo `string.asm` com o código.
+Arquivo `string.asm` com o codigo relocavel utilizandos os labels indicados 
+acima.
+
+## Links
+- [`mvn-cli`](https://github.com/PCS3616/mvn-rs)
+
+## Run
+```
+./mvn-cli assemble -i string.asm > string.int
+./mvn-cli assemble -i test_len.asm > test_len.int
+./mvn-cli link -i test_len.int -i string.int --complete > test.lig
+./mvn-cli relocate -i test.lig --base 0 > test.mvn
+```
