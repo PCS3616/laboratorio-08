@@ -34,6 +34,9 @@ acima.
 ```
 ./mvn-cli assemble -i string.asm > string.int
 ./mvn-cli assemble -i test_len.asm > test_len.int
-./mvn-cli link -i test_len.int -i string.int --complete > test.lig
-./mvn-cli relocate -i test.lig --base 0 > test.mvn
+./mvn-cli link -i program.int -i string.int --complete > program.lig
+./mvn-cli relocate -i program.lig --base 0 > program.mvn
 ```
+
+## Correção
+Temporariamente estão disponiveis os arquivos em `asm` que serão rodados na correção automatica. Ainda hoje devemos atualizar o repositorio com a pontuação automatica.
