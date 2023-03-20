@@ -20,37 +20,40 @@ MAIN        LV  MAIN
             MM  STRCMP_B
             SC  STRCMP
             SB  CASE_1_EXPECTED
-            JZ  FAIL
+            JZ  Case_2
+            JP  FAIL
 
-            ; test CASE_1
-            LV  CASE_1_A
+            ; test CASE_2
+Case_2      LV  CASE_2_A
             MM  STRCMP_A
-            LV  CASE_1_B
+            LV  CASE_2_B
             MM  STRCMP_B
             SC  STRCMP
-            SB  CASE_1_EXPECTED
-            JZ  FAIL
+            SB  CASE_2_EXPECTED
+            JZ  Case_3
+            JP  FAIL
 
-            ; test CASE_1
-            LV  CASE_1_A
+            ; test CASE_3
+Case_3      LV  CASE_3_A
             MM  STRCMP_A
-            LV  CASE_1_B
+            LV  CASE_3_B
             MM  STRCMP_B
             SC  STRCMP
-            SB  CASE_1_EXPECTED
-            JZ  FAIL
+            SB  CASE_3_EXPECTED
+            JZ  FIM
+            JP  FAIL
 
-            HM  MAIN
+FIM         HM  MAIN
 
 
 @ /0800
 CASE_1_EXPECTED K /FFFF
 
-CASE_1_A        K /BATA
-                K /TA00
+CASE_1_A        K /BACA
+                K /CA00
 
-CASE_1_B        K /BATA
-                K /TA20
+CASE_1_B        K /BACA
+                K /CA20
                 K /D0CE
                 K /0000
 
@@ -58,8 +61,8 @@ CASE_2_EXPECTED K /0001
 
 CASE_2_A        K /D0CE
                 K /0000
-CASE_2_B        K /BATA
-                K /TA00
+CASE_2_B        K /BACA
+                K /CA00
 
 
 CASE_3_EXPECTED K /0000
