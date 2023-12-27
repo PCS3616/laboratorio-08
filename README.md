@@ -37,6 +37,3 @@ acima.
 ./mvn-cli link -i program.int -i string.int --complete > program.lig
 ./mvn-cli relocate -i program.lig --base 0 > program.mvn
 ```
-
-## Correção
-Temporariamente estão disponiveis os arquivos em `asm` que serão rodados na correção automatica. Ainda hoje devemos atualizar o repositorio com a pontuação automatica.
