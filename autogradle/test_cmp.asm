@@ -6,7 +6,7 @@
             JP MAIN
 
 @ /0100
-PASS        K /0   ; 0 mean sucess
+PASS        K /FFFF   ; 0 mean sucess
 
 FAIL        LV  /1
             MM  PASS
@@ -43,7 +43,9 @@ Case_3      LV  CASE_3_A
             JZ  FIM
             JP  FAIL
 
-FIM         HM  MAIN
+FIM         LV  /0
+            MM  PASS
+            HM  MAIN
 
 
 @ /0800
