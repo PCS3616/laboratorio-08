@@ -1,0 +1,24 @@
+{
+  "tests": [
+    {
+      "name": "1. STRLEN",
+      "setup": "(git clone https://github.com/PCS3616/MVN.git || true) && sudo -H pip3 install pytest && curl -LO $(curl -s https://api.github.com/repos/PCS3616/mvn-rs/releases/latest | grep browser_download_url | grep mvn-cli | cut -d '\"' -f 4) && chmod +x mvn-cli",
+      "run": "pytest -k 'len'",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 10,
+      "points": 5
+    },
+    {
+      "name": "2. STRCMP",
+      "setup": "(git clone https://github.com/PCS3616/MVN.git || true) && sudo -H pip3 install pytest && curl -LO $(curl -s https://api.github.com/repos/PCS3616/mvn-rs/releases/latest | grep browser_download_url | grep mvn-cli | cut -d '\"' -f 4) && chmod +x mvn-cli",
+      "run": "pytest -k 'cmp'",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 10,
+      "points": 5
+    }
+  ]
+}

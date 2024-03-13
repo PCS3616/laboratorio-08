@@ -11,7 +11,8 @@ por um `NULL` (`'\0'` ou `0x00`).
 
 ## `STRLEN`
 Implemente uma função `STRLEN` que recebe no acumulador o endereço de uma string 
-e retorna no acumulador o tamanho em bytes dessa string.
+e retorna no acumulador o tamanho em bytes dessa string. O rótulo dessa *subrotina* (`STRLEN`)
+deve ser exportado em seu programa.
 
 Ref: [strlen](https://cplusplus.com/reference/cstring/strlen/)
 
@@ -19,7 +20,9 @@ Ref: [strlen](https://cplusplus.com/reference/cstring/strlen/)
 Implemente uma função `STRCMP` que recebe dois argumentos `STRCMP_A`, `STRCMP_B`
 com posições de string que serão comparadas, caracter a caracter seguindo o 
 valor deles na tabela ASCII. Caso a `STRCMP_A` seja maior que `STRCMP_B` retorna
-`1`, se for igual `0`, se for menor `-1` (em complemento de 2).
+`1`, se for igual `0`, se for menor `-1` (em complemento de 2). O rótulo dessa *subrotina* (`STRCMP`)
+e suas duas entradas(`STRCMP_A` e `STRCMP_B`) devem ser exportados em seu programa.
+
 
 Ref: [strcmp](https://cplusplus.com/reference/cstring/strcmp/)
 
