@@ -8,9 +8,9 @@ TEMP_PATH = Path("/tmp")
 
 
 def mvn_cli(arguments: list[str], output_filepath: str | Path):
-    command = ["./mvn-cli"] + arguments
+    command = f"./mvn-cli {' '.join(arguments)} || mvn-cli {' '.join(arguments)}"
     with open(output_filepath, "w", encoding="utf8") as output_file:
-        subprocess.run(command, check=True, stdout=output_file)
+        subprocess.run(command, shell=True, check=True, stdout=output_file)
 
 
 def execute(*subroutines: Path) -> Path:
