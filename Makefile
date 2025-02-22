@@ -1,14 +1,11 @@
 all:
 	@echo "Por favor especifique um target. As opções são: strlen, strcmp, clean"
 
-strlen:
-	mvn-cli assemble -i autogradle/test_len.asm > submission/program.int
-	mvn-cli assemble -i submission/string.asm > submission/string.int
-	mvn-cli link -i submission/program.int -i submission/string.int --complete > submission/program.lig
-	mvn-cli relocate -i submission/program.lig --base 0 > submission/program.mvn
+strlen: TEST=autogradle/test_len.asm
+strcmp: TEST=autogradle/test_cmp.asm
 
-strcmp:
-	mvn-cli assemble -i autogradle/test_cmp.asm > submission/program.int
+strlen strcmp:
+	mvn-cli assemble -i $(TEST) > submission/program.int
 	mvn-cli assemble -i submission/string.asm > submission/string.int
 	mvn-cli link -i submission/program.int -i submission/string.int --complete > submission/program.lig
 	mvn-cli relocate -i submission/program.lig --base 0 > submission/program.mvn
