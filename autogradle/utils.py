@@ -28,7 +28,7 @@ def execute(*subroutines: Path) -> Path:
     mvn_cli(link_arguments, linked_path)
 
     executable_path = TEMP_PATH / 'program.mvn'
-    mvn_cli(f"relocate -i {TEMP_PATH / 'program.mvn'} --base 0".split(), executable_path)
+    mvn_cli(f"relocate -i {TEMP_PATH / 'program.lig'} --base 0".split(), executable_path)
 
     return executable_path
 
